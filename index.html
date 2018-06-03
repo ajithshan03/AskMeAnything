@@ -14,9 +14,9 @@
         <h1>Ask a question</h1>
         <h5>must be yes/no question</h5>
         <input class="form-control" v-model="question">
-      <br /> <br />
-      <h2>{{answer}}</h2>
-      <img v-bind:src="image">
+        <br /> <br />
+        <h2>{{answer}}</h2>
+        <img v-bind:src="image">
       </div>
     </div>
 
@@ -43,7 +43,7 @@
                  return
                }
                vm.answer = "Thinking..."
-               axios.get("http://yesno.wtf/api")
+               axios.get("https://yesno.wtf/api")
                .then(function(response){
                  vm.answer = _.capitalize(response.data.answer)
                  vm.image = response.data.image
@@ -54,7 +54,7 @@
              }, 500
            )
          }
-       )};
+       });
     </script>
   </body>
 </html>
